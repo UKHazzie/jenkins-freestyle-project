@@ -1,14 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('Make directory'){
+        stage('Run Script'){
             steps{
-                sh "mkdir ~/jenkins-tutorial-test || true"
-            }
-        }
-        stage('make files'){
-            steps{
-                sh "touch ~/jenkins-tutorial-test/file1"
+                sh "chmod +x ./example.sh"
+                sh "./example.sh"
             }
         }
     }
